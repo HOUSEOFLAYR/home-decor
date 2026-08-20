@@ -6,24 +6,33 @@
 @import url('https://api.fontshare.com/v2/css?f[]=gambetta@400,401,500,501&f[]=switzer@400,500,600,700&display=swap');
 
 :root{
+  /* ---- Brand primitives (House of LAYR palette) ---- */
+  --alabaster:    #F4EFEA;  /* Primary Background */
+  --parchment:    #E6DFD5;  /* Secondary Background */
+  --espresso:     #221C18;  /* Primary Text / Dark Accent */
+  --terracotta:   #9E4F36;  /* Primary Brand Accent */
+  --chestnut:     #4A2E23;  /* Secondary Brand Accent */
+  --olive-accent: #5B5F45;  /* Supporting Accent */
+
   /* ---- Palette (warm, restrained, editorial) ---- */
-  --ivory:        #F6F1E8;
-  --ivory-deep:   #EFE7D8;
-  --paper:        #FBF8F2;
-  --beige:        #E4D8C3;
-  --sand:         #CBB694;
-  --stone:        #A99C86;
-  --olive:        #6C6350;
-  --clay:         #A9683F;
-  --clay-deep:    #8C5433;
-  --charcoal:     #1C1916;
-  --charcoal-soft:#26221D;
-  --charcoal-06:  rgba(28,25,22,0.06);
-  --charcoal-12:  rgba(28,25,22,0.12);
-  --charcoal-30:  rgba(28,25,22,0.30);
-  --charcoal-60:  rgba(28,25,22,0.60);
-  --ivory-70:     rgba(246,241,232,0.70);
-  --ivory-40:     rgba(246,241,232,0.40);
+  /* Legacy/system tokens mapped onto the brand primitives above */
+  --ivory:        var(--alabaster);
+  --ivory-deep:   var(--parchment);
+  --paper:        var(--parchment);
+  --beige:        var(--parchment);
+  --sand:         #D2AFA2;
+  --stone:        #A89890;
+  --olive:        var(--olive-accent);
+  --clay:         var(--chestnut);
+  --clay-deep:    var(--terracotta);
+  --charcoal:     var(--espresso);
+  --charcoal-soft:#2C2420;
+  --charcoal-06:  rgba(34,28,24,0.06);
+  --charcoal-12:  rgba(34,28,24,0.12);
+  --charcoal-30:  rgba(34,28,24,0.30);
+  --charcoal-60:  rgba(34,28,24,0.60);
+  --ivory-70:     rgba(244,239,234,0.70);
+  --ivory-40:     rgba(244,239,234,0.40);
 
   /* ---- Type ---- */
   --font-serif: 'Gambetta', Georgia, 'Iowan Old Style', 'Times New Roman', serif;
@@ -41,7 +50,7 @@
   --gutter: clamp(1.5rem, 4vw, 4rem);
   --section-pad: clamp(4.5rem, 9vw, 9.5rem);
   --hairline: 1px solid var(--charcoal-12);
-  --hairline-light: 1px solid rgba(246,241,232,0.18);
+  --hairline-light: 1px solid rgba(244,239,234,0.18);
 }
 
 /* ---------------------------------------------------------------------- */
@@ -354,7 +363,7 @@ body.nav-open{ overflow: hidden; }
   content: '';
   position: absolute;
   width: 22px; height: 22px;
-  border-color: rgba(246,241,232,.75);
+  border-color: rgba(244,239,234,.75);
 }
 .media__frame::before{ top: 18px; left: 18px; border-top: 1px solid; border-left: 1px solid; }
 .media__frame::after{ bottom: 18px; right: 18px; border-bottom: 1px solid; border-right: 1px solid; }
@@ -364,21 +373,21 @@ body.nav-open{ overflow: hidden; }
   font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(246,241,232,.88);
+  color: rgba(244,239,234,.88);
   max-width: 70%;
 }
 .media:hover .media__surface{ transform: scale(1.055); }
 
 /* tonal gradients standing in for photography */
-.tone-ground   .media__surface{ background: radial-gradient(120% 140% at 20% 15%, #9c7757 0%, #7c5b3d 42%, #4a3423 100%); }
-.tone-vertical .media__surface{ background: radial-gradient(120% 140% at 80% 10%, #4a453c 0%, #2c2822 48%, #17140f 100%); }
-.tone-overhead .media__surface{ background: radial-gradient(130% 150% at 50% 0%, #c9a26a 0%, #a97a45 45%, #6b4c2c 100%); }
-.tone-openair  .media__surface{ background: radial-gradient(120% 140% at 25% 90%, #8a9377 0%, #5f6b4c 46%, #384130 100%); }
-.tone-ritual   .media__surface{ background: radial-gradient(120% 140% at 75% 20%, #e5d9c3 0%, #c7b696 46%, #93826200 100%), linear-gradient(160deg,#d9cbae,#a99678); }
-.tone-clay     .media__surface{ background: radial-gradient(120% 140% at 30% 20%, #c98a55 0%, #a9683f 45%, #5f3f26 100%); }
-.tone-stone    .media__surface{ background: radial-gradient(120% 140% at 70% 80%, #b8ab93 0%, #a99c86 45%, #756b58 100%); }
-.tone-charcoal .media__surface{ background: radial-gradient(120% 140% at 50% 20%, #3a352d 0%, #211d18 55%, #0d0b09 100%); }
-.tone-hero     .media__surface{ background: radial-gradient(140% 120% at 50% 30%, #6b5138 0%, #362717 55%, #17110b 100%); }
+.tone-ground   .media__surface{ background: radial-gradient(120% 140% at 20% 15%, #b5754f 0%, #8f5233 42%, #4a2e23 100%); }
+.tone-vertical .media__surface{ background: radial-gradient(120% 140% at 80% 10%, #4a423c 0%, #2c2620 48%, #17120e 100%); }
+.tone-overhead .media__surface{ background: radial-gradient(130% 150% at 50% 0%, #c9835a 0%, #a35c3a 45%, #4a2e23 100%); }
+.tone-openair  .media__surface{ background: radial-gradient(120% 140% at 25% 90%, #7c8060 0%, #5b5f45 46%, #363a28 100%); }
+.tone-ritual   .media__surface{ background: radial-gradient(120% 140% at 75% 20%, #ece4d8 0%, #d9c9b8 46%, #b89e8800 100%), linear-gradient(160deg,#e6dfd5,#c9a084); }
+.tone-clay     .media__surface{ background: radial-gradient(120% 140% at 30% 20%, #b5714c 0%, #9e4f36 45%, #4a2e23 100%); }
+.tone-stone    .media__surface{ background: radial-gradient(120% 140% at 70% 80%, #b3a49a 0%, #a89890 45%, #6f6058 100%); }
+.tone-charcoal .media__surface{ background: radial-gradient(120% 140% at 50% 20%, #3a2f28 0%, #251e19 55%, #100d0a 100%); }
+.tone-hero     .media__surface{ background: radial-gradient(140% 120% at 50% 30%, #6b4030 0%, #3a251d 55%, #17110c 100%); }
 
 .ratio-1-1{ aspect-ratio: 1/1; }
 .ratio-4-5{ aspect-ratio: 4/5; }
@@ -512,7 +521,7 @@ body.nav-open{ overflow: hidden; }
   color: var(--charcoal);
   transition: border-color var(--dur-s);
 }
-.field select{ appearance: none; -webkit-appearance:none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231C1916' stroke-width='1.2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; }
+.field select{ appearance: none; -webkit-appearance:none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23221C18' stroke-width='1.2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; }
 .field textarea{ resize: vertical; min-height: 110px; }
 .field input:focus, .field select:focus, .field textarea:focus{ outline: none; border-color: var(--charcoal); }
 .field input::placeholder, .field textarea::placeholder{ color: var(--charcoal-30); }
@@ -545,7 +554,7 @@ body.nav-open{ overflow: hidden; }
   font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
   color: var(--ivory-70);
 }
-.scroll-cue__line{ width: 1px; height: 42px; background: rgba(246,241,232,.5); position: relative; overflow: hidden; }
+.scroll-cue__line{ width: 1px; height: 42px; background: rgba(244,239,234,.5); position: relative; overflow: hidden; }
 .scroll-cue__line::after{ content:''; position:absolute; top:-100%; left:0; width:100%; height:100%; background: var(--ivory); animation: scrollcue 2.2s var(--ease-soft) infinite; }
 @keyframes scrollcue{ to{ top: 100%; } }
 
