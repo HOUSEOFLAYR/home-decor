@@ -3,7 +3,7 @@
    Where Every Space Finds Its Final Layer
    ========================================================================== */
 
-@import url('https://api.fontshare.com/v2/css?f[]=gambetta@400,401,500,501&f[]=switzer@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 :root{
   /* ---- Brand primitives (House of LAYR palette) ---- */
@@ -35,8 +35,8 @@
   --ivory-40:     rgba(244,239,234,0.40);
 
   /* ---- Type ---- */
-  --font-serif: 'Gambetta', Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-  --font-sans: 'Switzer', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Libre Baskerville', Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --font-sans: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* ---- Motion ---- */
   --ease: cubic-bezier(.16,.8,.24,1);
@@ -68,7 +68,7 @@ img, svg{ display: block; max-width: 100%; }
 a{ color: inherit; text-decoration: none; }
 button{ font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 input, textarea, select{ font: inherit; color: inherit; }
-h1,h2,h3,h4{ font-weight: 401; }
+h1,h2,h3,h4{ font-weight: 400; }
 
 body{
   font-family: var(--font-sans);
@@ -86,21 +86,21 @@ body{
 /* ---------------------------------------------------------------------- */
 h1, .h1{
   font-family: var(--font-serif);
-  font-weight: 401;
+  font-weight: 400;
   font-size: clamp(2.75rem, 6vw, 6.2rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
 }
 h2, .h2{
   font-family: var(--font-serif);
-  font-weight: 401;
+  font-weight: 400;
   font-size: clamp(2.1rem, 4.4vw, 3.6rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
 h3, .h3{
   font-family: var(--font-serif);
-  font-weight: 401;
+  font-weight: 400;
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   line-height: 1.18;
 }
@@ -113,7 +113,7 @@ h4, .h4{
 }
 p{ font-size: 1rem; line-height: 1.75; color: var(--charcoal-60); }
 .lede{ font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.6; color: var(--charcoal-60); font-weight: 400; }
-.serif-italic{ font-family: var(--font-serif); font-style: italic; font-weight: 401; }
+.serif-italic{ font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 
 .eyebrow{
   display: inline-flex;
@@ -251,27 +251,35 @@ p{ font-size: 1rem; line-height: 1.75; color: var(--charcoal-60); }
   top: 0; left: 0; right: 0;
   z-index: 200;
   padding: 1.7rem 0;
-  transition: background var(--dur-m) var(--ease-soft), padding var(--dur-m) var(--ease-soft), border-color var(--dur-m) var(--ease-soft);
+  color: var(--charcoal);
+  transition: background var(--dur-m) var(--ease-soft), padding var(--dur-m) var(--ease-soft), border-color var(--dur-m) var(--ease-soft), color var(--dur-m) var(--ease-soft);
   border-bottom: 1px solid transparent;
 }
 .site-header.is-scrolled{
   background: var(--paper);
   padding: 1.1rem 0;
   border-color: var(--charcoal-12);
+  color: var(--charcoal);
 }
+.site-header.theme-on-dark:not(.is-scrolled){ color: var(--ivory); }
 .site-header .wrap{ display: flex; align-items: center; justify-content: space-between; }
 
 .brand{
   font-family: var(--font-serif);
-  font-size: 1.28rem;
-  letter-spacing: 0.03em;
-  color: var(--charcoal);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: inherit;
   display: flex;
   align-items: baseline;
   gap: .5rem;
 }
 .brand em{ font-style: italic; color: var(--clay-deep); }
-.theme-dark .brand, .site-header:not(.is-scrolled) .theme-on-dark .brand{ color: var(--ivory); }
+.site-header.theme-on-dark:not(.is-scrolled) .brand em{ color: var(--sand); }
+
+.site-header.theme-on-dark:not(.is-scrolled) .btn--dark{ color: var(--ivory); }
+.site-header.theme-on-dark:not(.is-scrolled) .btn--dark::before{ background: var(--ivory); }
+.site-header.theme-on-dark:not(.is-scrolled) .btn--dark:hover{ color: var(--charcoal); }
 
 .nav-main{ display: flex; align-items: center; gap: 2.6rem; }
 .nav-links{ display: flex; align-items: center; gap: 2.4rem; }
