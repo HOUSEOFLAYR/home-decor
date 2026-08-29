@@ -385,7 +385,7 @@ body.nav-open{ overflow: hidden; }
 .tone-clay     .media__surface{ background: radial-gradient(120% 140% at 30% 20%, #b5714c 0%, #9e4f36 45%, #4a2e23 100%); }
 .tone-stone    .media__surface{ background: radial-gradient(120% 140% at 70% 80%, #b3a49a 0%, #a89890 45%, #6f6058 100%); }
 .tone-charcoal .media__surface{ background: radial-gradient(120% 140% at 50% 20%, #3a2f28 0%, #251e19 55%, #100d0a 100%); }
-.tone-hero     .media__surface{ background: radial-gradient(140% 120% at 50% 30%, #6b4030 0%, #3a251d 55%, #17110c 100%); }
+.tone-hero     .media__surface{ background: radial-gradient(140% 120% at 50% 30%, #3a332d 0%, #221c18 55%, #100d0a 100%); }
 
 .ratio-1-1{ aspect-ratio: 1/1; }
 .ratio-4-5{ aspect-ratio: 4/5; }
