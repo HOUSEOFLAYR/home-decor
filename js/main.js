@@ -4,10 +4,13 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------- Preloader ---------------- */
+  /* ---------------- Preloader (first entry into the site only) ---------------- */
   var preloader = document.querySelector('.preloader');
   if(preloader){
-    if(reduceMotion){
+    var alreadyEntered = false;
+    try{ alreadyEntered = sessionStorage.getItem('layrEntered') === '1'; }catch(e){}
+
+    if(reduceMotion || alreadyEntered){
       preloader.classList.add('is-done');
       document.body.classList.remove('preloading');
     } else {
@@ -17,6 +20,8 @@
         document.body.classList.remove('preloading');
       }, 1900);
     }
+
+    try{ sessionStorage.setItem('layrEntered', '1'); }catch(e){}
   }
 
   /* ---------------- Header state on scroll ---------------- */
