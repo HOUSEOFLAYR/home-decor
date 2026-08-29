@@ -4,6 +4,21 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------------- Preloader ---------------- */
+  var preloader = document.querySelector('.preloader');
+  if(preloader){
+    if(reduceMotion){
+      preloader.classList.add('is-done');
+      document.body.classList.remove('preloading');
+    } else {
+      requestAnimationFrame(function(){ preloader.classList.add('is-ready'); });
+      setTimeout(function(){
+        preloader.classList.add('is-done');
+        document.body.classList.remove('preloading');
+      }, 1900);
+    }
+  }
+
   /* ---------------- Header state on scroll ---------------- */
   var header = document.querySelector('.site-header');
   function onScroll(){
