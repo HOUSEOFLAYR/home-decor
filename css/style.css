@@ -113,6 +113,10 @@ h4, .h4{
 }
 p{ font-size: 1rem; line-height: 1.8; color: var(--charcoal-60); }
 .lede{ font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.65; color: var(--charcoal-60); font-weight: 400; }
+.hero-tagline{ font-size: clamp(.8rem, 1.6vw, 1.05rem); white-space: nowrap; }
+@media (max-width: 700px){
+  .hero-tagline{ white-space: normal; }
+}
 .serif-italic{ font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 
 .eyebrow{
