@@ -429,6 +429,19 @@ body.nav-open{ overflow: hidden; }
   .layr-panel__media{ order: 1; }
 }
 
+/* Smaller-photo variant: photo takes a minority (fixed-cap) column, text takes the rest */
+.layr-row{ display: grid; grid-template-columns: minmax(0,340px) 1fr; gap: var(--gutter); align-items: center; padding: 3.5rem 0; border-top: var(--hairline); }
+.layr-row__media{ order: 1; }
+.layr-row__content{ order: 2; }
+.layr-row--reverse{ grid-template-columns: 1fr minmax(0,340px); }
+.layr-row--reverse .layr-row__media{ order: 2; }
+.layr-row--reverse .layr-row__content{ order: 1; }
+@media (max-width: 900px){
+  .layr-row, .layr-row--reverse{ grid-template-columns: 1fr; padding: 2.6rem 0; }
+  .layr-row__media{ order: 1 !important; }
+  .layr-row__content{ order: 2 !important; }
+}
+
 /* ---------------------------------------------------------------------- */
 /* Collection blocks (Collections page)                                    */
 /* ---------------------------------------------------------------------- */
