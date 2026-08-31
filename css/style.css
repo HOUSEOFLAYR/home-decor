@@ -463,8 +463,7 @@ body.nav-open{ overflow: hidden; }
 .collection-block__items span{ font-size: .88rem; color: var(--charcoal-60); }
 @media (max-width: 1080px){
   .collection-block, .collection-block--reverse{ flex-direction: column; min-height: 0; }
-  .collection-block__media{ flex-basis: auto; }
-  .collection-block__media .media{ aspect-ratio: 4/3; }
+  .collection-block__media{ flex-basis: auto; aspect-ratio: 4/3; }
   .collection-block__content{ padding: 3rem var(--gutter); }
 }
 
