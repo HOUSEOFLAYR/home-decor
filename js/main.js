@@ -131,13 +131,14 @@
       if(letterSpacing){ width += letterSpacing * Math.max(text.length - 1, 0); }
       return width;
     }
+    var TAGLINE_WIDTH_RATIO = 0.55; /* tagline renders at this fraction of the heading's width */
     function fitTagline(){
       heroTagline.style.fontSize = '';
       var headingWidth = textWidth(heroHeading);
       var taglineWidth = textWidth(heroTagline);
       if(headingWidth > 0 && taglineWidth > 0){
         var currentSize = parseFloat(getComputedStyle(heroTagline).fontSize);
-        heroTagline.style.fontSize = (currentSize * (headingWidth / taglineWidth)) + 'px';
+        heroTagline.style.fontSize = (currentSize * (headingWidth * TAGLINE_WIDTH_RATIO / taglineWidth)) + 'px';
       }
     }
     fitTagline();
