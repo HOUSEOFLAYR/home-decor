@@ -492,6 +492,7 @@ body.nav-open{ overflow: hidden; }
 /* ---------------------------------------------------------------------- */
 .site-footer{ background: var(--charcoal); color: var(--ivory-70); padding-top: 6rem; }
 .footer-top{ display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: var(--gutter); padding-bottom: 4.5rem; }
+.footer-top--3col{ grid-template-columns: 1.4fr 1fr 1fr; }
 .footer-brand .brand{ color: var(--ivory); font-size: 1.5rem; margin-bottom: 1.1rem; }
 .footer-brand p{ color: var(--sand); max-width: 30ch; font-size: .92rem; }
 .footer-col h4{ color: var(--ivory-70); font-size: .7rem; letter-spacing: .18em; margin-bottom: 1.3rem; }
@@ -570,10 +571,12 @@ body.nav-open{ overflow: hidden; }
 
 @media (max-width: 1080px){
   .footer-top{ grid-template-columns: 1fr 1fr; row-gap: 3rem; }
+  .footer-top--3col{ grid-template-columns: 1fr 1fr; }
   .footer-brand{ grid-column: 1 / -1; }
 }
 @media (max-width: 640px){
   .footer-top{ grid-template-columns: 1fr; }
+  .footer-top--3col{ grid-template-columns: 1fr; }
   .footer-bottom{ flex-direction: column; gap: .6rem; align-items: flex-start; }
 }
 
