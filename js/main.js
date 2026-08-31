@@ -116,6 +116,39 @@
     });
   }
 
+  /* ---------------- Fit hero tagline width to the heading above it ---------------- */
+  var heroHeading = document.querySelector('.hero h1');
+  var heroTagline = document.querySelector('.hero .hero-tagline');
+  if(heroHeading && heroTagline){
+    var measureCanvas = document.createElement('canvas');
+    var measureCtx = measureCanvas.getContext('2d');
+    function textWidth(el){
+      var cs = getComputedStyle(el);
+      measureCtx.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+      var text = el.textContent.trim();
+      var width = measureCtx.measureText(text).width;
+      var letterSpacing = parseFloat(cs.letterSpacing) || 0;
+      if(letterSpacing){ width += letterSpacing * Math.max(text.length - 1, 0); }
+      return width;
+    }
+    function fitTagline(){
+      heroTagline.style.fontSize = '';
+      var headingWidth = textWidth(heroHeading);
+      var taglineWidth = textWidth(heroTagline);
+      if(headingWidth > 0 && taglineWidth > 0){
+        var currentSize = parseFloat(getComputedStyle(heroTagline).fontSize);
+        heroTagline.style.fontSize = (currentSize * (headingWidth / taglineWidth)) + 'px';
+      }
+    }
+    fitTagline();
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitTagline); }
+    var taglineResizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(taglineResizeTimer);
+      taglineResizeTimer = setTimeout(fitTagline, 120);
+    });
+  }
+
   /* ---------------- Current year ---------------- */
   document.querySelectorAll('[data-year]').forEach(function(el){
     el.textContent = new Date().getFullYear();
