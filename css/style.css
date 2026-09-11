@@ -265,7 +265,7 @@ p{ font-size: 1rem; line-height: 1.8; color: var(--charcoal-60); }
 .site-header.theme-on-dark:not(.is-scrolled){ color: var(--ivory); }
 .site-header .wrap{ display: flex; align-items: center; justify-content: space-between; }
 
-.brand-logo{ display: block; height: 38px; width: auto; transition: filter var(--dur-m) var(--ease-soft); }
+.brand-logo{ display: block; height: 56px; width: auto; transition: filter var(--dur-m) var(--ease-soft); }
 .site-header.theme-on-dark:not(.is-scrolled) .brand-logo{ filter: brightness(0) invert(1); }
 
 .brand{
